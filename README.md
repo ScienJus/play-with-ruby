@@ -16,8 +16,21 @@
 
  - [服务器的准备工作][2]
  - [搭建Ruby环境][2]
+ - [Ruby的基本语法][3]
 
+##参考资料
+
+这里记录了我在学习过程中参考过的资料，非常感谢这些作者带来的贡献。
+
+ - [笨方法学Ruby][ref1]
+ - [Ruby 语言新手教程][ref2]
+ - [Ruby 风格指导][ref3]
 
 
 [1]: /articles/preparatory.md
 [2]: /articles/install.md
+[3]: /articles/grammar.md
+
+[ref1]: http://lrthw.github.io/
+[ref2]: http://saito.im/slide/ruby-new.html
+[ref3]: https://ruby-china.org/wiki/coding-style
