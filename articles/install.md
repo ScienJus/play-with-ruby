@@ -16,7 +16,9 @@ curl -L http://get.rvm.io | bash -s stable --ruby
 
 如果出现了：
 
+```
 GPG signature verification failed for '/home/ubuntu/.rvm/archives/rvm-1.26.11.tgz' - 'https://github.com/rvm/rvm/releases/download/1.26.11/1.26.11.tar.gz.asc'!
+```
 
 则：
 
