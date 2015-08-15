@@ -5,7 +5,10 @@
 使用`print`和`puts`方法可以将内容输出到命令行，他们的区别是`puts`会在结尾自动换行，`print`则不会：
 
 ```ruby
+#会换行
 puts "Hello Ruby!"
+
+#不会换行
 print "Hello Ruby!"
 ```
 
@@ -27,7 +30,7 @@ puts "Hello Ruby!"
 puts "Hello Ruby!"
 ```
 
-在这里顺便说一下：在Ruby中缩进一般使用2个空格而不是Tab（4个空格）。
+顺便提一下：在Ruby的推荐风格中缩进一般使用2个空格而不是Tab（4个空格）。
 
 ###变量
 
@@ -37,7 +40,7 @@ Ruby是弱类型语言，可以直接在语句中使用`name = value`的格式�
 color = "red"
 ```
 
-Ruby中有两种方法可以格式化输出变量，分别是以`#{name}`格式嵌入在字符串中或是在字符串后追加`%`：
+有两种方法可以格式化输出变量，分别是以`#{name}`格式嵌入在字符串中或是在字符串后追加`%`：
 
 ```ruby
 name = "Rachel"
@@ -57,12 +60,12 @@ puts "My name is %s" % name
 ```ruby
 puts "How old are you"
 age = gets.chomp()
-puts "you are %d years old!" % age
+puts "You are %d years old!" % age
 ```
 
 ###接收运行参数
 
-使用`ARGV`常量可以拿到运行的填写的参数，使用`$0`可以获得当前运行的ruby脚本的文件名：
+`ARGV`常量可以得到程序运行时的命令行参数，`$0`可以获得当前运行脚本的文件名：
 
 ```ruby
 first, second, third = ARGV
@@ -83,13 +86,13 @@ Ruby中的if语句由`if`、`elsif`和`else`组成：
 age = 30
 
 if age < 12
-  puts "you are a child"
+  puts "You are a child"
 elsif age < 30
-  puts "you are a teenager"
+  puts "You are a teenager"
 elsif age < 60
-  puts "you are a adult"
+  puts "You are a adult"
 else
-  puts "you are a elder"
+  puts "You are a elder"
 end
 ```
 
@@ -98,16 +101,16 @@ end
 ```ruby
 age = 10
 
-if age < 12 then puts "you are a child"
+if age < 12 then puts "You are a child"
 
-puts "you are a child" if age < 12
+puts "You are a child" if age < 12
 ```
 
 在这种语义中，还可以使用`unless`作为和`if`相反的写法。
 ```ruby
 age = 10
 
-puts "you are a child" unless age > 12
+puts "You are a child" unless age >= 12
 ```
 
 ###条件语句（switch）
@@ -118,8 +121,8 @@ Ruby中的switch语句由`case`、`when`和`else`组成：
 sex = male
 
 case sex
-when "male" then puts "you are a boy"
-when "fumale" then puts "you are a girl"
+when "male" then puts "You are a boy"
+when "fumale" then puts "You are a girl"
 else puts "???"
 end
 ```
@@ -132,27 +135,23 @@ end
 pages = [1, 2, 3, 4, 5]
 
 #快速遍历数组
-
 for page in pages
-  puts "now is page %d" % page
+  puts "Now is page %d" % page
 end
 
 #或者
-
 pages.each do |page|
-  puts "now is page %d" % page
+  puts "Now is page %d" % page
 end
 
 #简单循环事件
-
-for index in (0..5)
-  puts "now is page %d" % page
+for page in (0..5)
+  puts "Now is page %d" % page
 end
 
 #或者
-
 (0..5).each do |page|
-  puts "now is page %d" % page
+  puts "Now is page %d" % page
 end
 ```
 
@@ -197,7 +196,7 @@ loop do
 end
 ```
 
-由于loop本身并没有循环结束的条件，所以特定关键词结束循环（之后会提到）。
+由于loop本身并没有循环结束的条件，所以需要在语句块中使用特定的关键词停止循环。
 
 ###循环控制
 
@@ -211,7 +210,7 @@ end
 
 ###方法
 
-在Ruby中使用`def`关键词声明一个方法：
+在Ruby中使用`def`关键词声明方法：
 
 ```ruby
 def say_hello()
@@ -219,7 +218,7 @@ def say_hello()
 end
 ```
 
-其中既可以显式的定义参数的数量和每个参数的名称，也可以直接通过`*args`获得所有参数：
+其中既可以显式的定义参数的数量和每个参数的名称，也可以直接通过`*args`定义所有参数的集合：
 
 ```ruby
 #下面两个方法实际是一样的
@@ -227,13 +226,13 @@ def puts_two_args(arg1, arg2)
   puts "arg1: %s, arg2: %s" % [arg1, arg2]
 end
 
-def puts_two_args( *args ) 
+def puts_two_args(*args) 
   arg1, arg2 = args
   puts "arg1: %s, arg2: %s" % [arg1, arg2]
 end
 ```
 
-也可以给每个参数都定义一个默认值：
+当然也可以给参数定义一个默认值：
 
 ```ruby
 def puts_two_args(arg1 = "nothing", arg2 = "nothing")
@@ -241,7 +240,7 @@ def puts_two_args(arg1 = "nothing", arg2 = "nothing")
 end
 ```
 
-Ruby的方法默认会返回最后一条语句的值，也可以通过`return`显式返回或返回多个值：
+Ruby中的方法默认会返回最后一条语句的值，也可以通过`return`显式的返回一个或多个值：
 
 ```ruby
 #会返回num1 + num2
@@ -298,7 +297,7 @@ end
 在声明类的时候通过`<`可以继承一个已有类：
 
 ```ruby
-class Student < person
+class Student < Person
   attr_reader :school
   
   def initialize(name, school)
@@ -314,7 +313,7 @@ end
 
 ###模块
 
-Ruby中没有interface，但是提供了module和mixin机制。可以将通过`module`定义的模块引用进类以使用该模块的方法：
+Ruby中没有interface，但是提供了module和mixin机制。可以将通过`module`定义的模块引用到类中以使用该模块的方法：
 
 ```ruby
 module Learner
@@ -328,7 +327,7 @@ class Student
 end
 ```
 
-因为模块不可以直接实例化，所以可以将常量定义在模块内直接调用：
+因为模块不可以直接实例化，所以也可以将常量定义在模块内直接调用：
 
 ```ruby
 module Math
