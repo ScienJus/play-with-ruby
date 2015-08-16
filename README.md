@@ -25,6 +25,7 @@
  - [笨方法学Ruby][ref1]
  - [Ruby 语言新手教程][ref2]
  - [Ruby 风格指导][ref3]
+ - [git简明指南][ref4]
 
 
 [1]: /articles/preparatory.md
@@ -34,3 +35,4 @@
 [ref1]: http://lrthw.github.io/
 [ref2]: http://saito.im/slide/ruby-new.html
 [ref3]: https://ruby-china.org/wiki/coding-style
+[ref4]: http://rogerdudler.github.io/git-guide/index.zh.html
