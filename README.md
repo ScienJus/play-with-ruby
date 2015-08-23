@@ -17,6 +17,7 @@
  - [服务器的准备工作][1]
  - [搭建Ruby环境][2]
  - [Ruby的基本语法][3]
+ - [Ruby中的可选参数和命名参数][4]
 
 ##参考资料
 
@@ -31,6 +32,7 @@
 [1]: /articles/preparatory.md
 [2]: /articles/install.md
 [3]: /articles/grammar.md
+[4]: /articles/method_parameters.md
 
 [ref1]: http://lrthw.github.io/
 [ref2]: http://saito.im/slide/ruby-new.html
