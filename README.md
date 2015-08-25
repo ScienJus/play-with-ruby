@@ -26,6 +26,7 @@
  - [搭建Ruby环境][2]
  - [Ruby的基本语法][3]
  - [Ruby中的可选参数和命名参数][4]
+ - [文件操作][5]
 
 ##参考资料
 
@@ -35,14 +36,17 @@
  - [Ruby 语言新手教程][ref2]
  - [Ruby 风格指导][ref3]
  - [git简明指南][ref4]
+ - [ruby-doc.org][ref5]
 
 
 [1]: /articles/preparatory.md
 [2]: /articles/install.md
 [3]: /articles/grammar.md
 [4]: /articles/method_parameters.md
+[5]: /articles/file.md
 
 [ref1]: http://lrthw.github.io/
 [ref2]: http://saito.im/slide/ruby-new.html
 [ref3]: https://ruby-china.org/wiki/coding-style
 [ref4]: http://rogerdudler.github.io/git-guide/index.zh.html
+[ref5]: http://ruby-doc.org
