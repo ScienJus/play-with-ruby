@@ -58,15 +58,20 @@ def search(
   Net::HTTP.start(uri.host, uri.port,
   :use_ssl => uri.scheme == 'https') do |http|
     req = Net::HTTP::Get.new(uri)
-        
+      
+    # 方法1 通过initialize_http_header设置header  
     req.initialize_http_header({
       'Authorization' => "Bearer #{token}",
       'User-Agent' => 'PixivIOSApp/5.6.0'
     })
+    
+    # 方法2 通过self:[]设置header
     # req['Authorization'] = "Bearer #{token}"
     # req['User-Agent'] = 'PixivIOSApp/5.6.0'
         
     res = http.request req
+    
+    # 方法3 直接提交uri和header
     # res = http.get(uri, {
     #   'Authorization' => "Bearer #{token}",
     #   'Referer' => 'http://spapi.pixiv.net/',
