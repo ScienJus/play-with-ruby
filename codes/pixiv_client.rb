@@ -13,7 +13,7 @@ def login(username, password)
   uri = URI('https://oauth.secure.pixiv.net/auth/token')
 
   Net::HTTP.start(uri.host, uri.port, 
-    :use_ssl => uri.scheme == 'https') do |http|
+  :use_ssl => uri.scheme == 'https') do |http|
     req = Net::HTTP::Post.new(uri)
     req.set_form_data(params)
     res = http.request req
@@ -25,7 +25,8 @@ def login(username, password)
 end
 
 def search(
-  keywords,
+  key_words,
+  token,
   page: 1,
   mode: 'exact_tag',
   period: 'all',
@@ -34,17 +35,52 @@ def search(
   sort: 'date' ,
   image_sizes: ['px_128x128'],
   profile_image_sizes: ['px_50x50'],
-  includ_stats: true,
+  include_stats: true,
   include_sanity_level: true
 )
-  puts "page = #{page}"
-  puts "mode = #{mode}"
-  puts "order = #{order}"
-  puts "sort = #{sort}" 
+  uri = URI('https://public-api.secure.pixiv.net/v1/search/works.json');
+ 
+  uri.query = URI.encode_www_form({
+    'q' => key_words,
+    'page' => page,
+    'mode' => mode,
+    'period' => period,
+    'order' => order,
+    'sort' => sort,
+    'image_sizes' => image_sizes,
+    'profile_image_sizes' => profile_image_sizes,
+    'include_stats' => include_stats,
+    'include_sanity_level' => include_sanity_level
+  })
+
+  puts uri
+
+  Net::HTTP.start(uri.host, uri.port,
+  :use_ssl => uri.scheme == 'https') do |http|
+    req = Net::HTTP::Get.new(uri)
+        
+    req.initialize_http_header({
+      'Authorization' => "Bearer #{token}",
+      'User-Agent' => 'PixivIOSApp/5.6.0'
+    })
+    # req['Authorization'] = "Bearer #{token}"
+    # req['User-Agent'] = 'PixivIOSApp/5.6.0'
+        
+    res = http.request req
+    # res = http.get(uri, {
+    #   'Authorization' => "Bearer #{token}",
+    #   'Referer' => 'http://spapi.pixiv.net/',
+    #   'User-Agent' => 'PixivIOSApp/5.6.0'
+    # })
+
+    puts res.body
+  end
 end
 
-search('www', :page => 5, :mode => 'text')
+token = login('931996776@qq.com', 'xel0429')
 
-#token = login('931996776@qq.com', 'xel0429')
+puts "token : #{token}"
 
-#puts "token : #{token}"
+search('kancolle', token, :page => 1)
+
+
