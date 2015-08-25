@@ -1,5 +1,7 @@
 #Ruby中的可选参数和命名参数
 
+因为在此之前我最常用的编程语言是Java，所以这里首先以Java作为对比，如果你对此并不感兴趣，可以直接跳到下半部分。
+
 ###Java中的可选参数和命名参数
 
 >编写一个方法时，可以为参数添加默认值，当调用者使用该方法时，既可以为这些参数指定具体的值，也可以使用默认值，这种方式称为可选参数。
@@ -18,14 +20,14 @@
 
 如果使用Java编写这个Api，我只能先定义这样一个方法：
 
-```java
+```
 //其实mode应该是枚举类型的，但是举例嘛，不要太认真。
 void search(String keyWords, Integer page, Integer pagingSize, String mode);
 ```
 
 定义完这个方法后，还需要在方法内部给每个可选参数赋予默认值，当然由于这对调用者不可见，所以只能在注释中告诉调用者哪些参数拥有默认值，分别是多少，以便他们调用，就像这样：
 
-```java
+```
 /**
  * 搜索的Api
  * @param keyWords   关键词，必选
@@ -45,13 +47,13 @@ void search(String keyWords, Integer page, Integer pagingSize, String mode) {
 
 这样一个带有默认值的搜索Api便完成了，但是如果调用者只想指定关键词，其他参数都使用默认值的话，调用代码就会写成这样：
 
-```java
+```
 search("kancolle", null, null, null);
 ```
 
 传了好多个`null`啊，而且并不能直观的看出每个`null`的意义，所以严格来说这并不是一个好做法。如果我们只想使这个方法在调用时不用传一大堆`null`，可以用重载稍微改进一下，比如：
 
-```java
+```
 /**
  * 搜索的Api（只能以标签搜索前20条）
  * @param keyWords   关键词，必选
@@ -68,13 +70,13 @@ void search(String keyWords) {
 
 不过最可怕的还不是在这里，而是当你好不容易将这8个方法都写好后，突然有一天一个人这样使用了这个Api：
 
-```java
+```
 search("kancolle", null);
 ```
 
 即使没有必要这么写，但是的确会出现这种情况，而且这时候编译器又会报错，因为它分不清调用的是`search(String, Interger)`还是`search(String, String)`，除非将代码修改成这样：
 
-```java
+```
 search("kancolle", (Integer)null);
 ```
 
@@ -86,7 +88,7 @@ search("kancolle", (Integer)null);
 
 接下来便要进入正题了，实际这种尴尬的情况基本上也只会在Java中出现，因为无论是C#、Python或是Ruby都提供了可选参数这个概念，比如这个Api如果用Ruby写就会是这样：
 
-```ruby
+```
 def search(key_words, page = 1, paging_size = 20, mode = 'tag')
   ...
 end
@@ -94,19 +96,19 @@ end
 
 没错，只需要这一个方法就可以了，比如你可以这样调用：
 
-```ruby
+```
 search "kancolle"
 ```
 
 或是这样：
 
-```ruby
+```
 search("kancolle", 2)
 ```
 
 但是当调用拥有可选参数的方法时，必须严格按照方法定义参数的顺序进行传值，并且一旦自某个参数使用默认值后，该参数之后的所有参数也只能使用默认值。比如假设你只想要改变搜索方式为文本搜索（text），这样进行调用：
 
-```ruby
+```
 #进入方法内部后，被赋值为text的却是page。
 search("kancolle", "text")
 ```
@@ -117,7 +119,7 @@ search("kancolle", "text")
 
 如果是Python的话，只需要在传参时直接指定参数名即可，比如；
 
-```python
+```
 search("kancolle", page = 1, mode = "text")
 ```
 
@@ -125,7 +127,7 @@ search("kancolle", page = 1, mode = "text")
 
 第一种是直接在方法中定义一个Hash参数，用于接收所有命名参数：
 
-```ruby
+```
 #params = {} 也可以换成 **params，区别接下来会提到
 def search(key_words, params = {})
   default_params = {
@@ -142,7 +144,7 @@ end
 
 第二种方法是直接在参数中声明和设置默认值：
 
-```ruby
+```
 def search(key_words, page: 1, paging_size: 20, mode: 'tag')
   ...
 end
@@ -152,11 +154,23 @@ end
 
 当然无论使用哪种方式，调用时都是相同的：
 
-```ruby
+```
 search('kancolle', page: 2, mode: 'text')
 ```
 
-有的时候你也许会遇到需要同时使用这两种方式的情况，这时候需要注意的是：虽然`params = {}`和`**params`都可以接收到所有的命名参数，但是只有`**params`可以与第二种方式同时使用，使用`params = {}`的话则会报错。
+有的时候你也许会遇到需要同时使用这两种方式的情况，这时候需要注意的是：虽然`params = {}`和`**params`都可以接收到所有的命名参数，但是只有`**params`可以与第二种方式同时使用，使用`params = {}`的话则会报错，例如：ss
+
+```
+#可以运行
+def search(key_words: 'all', **params)
+  ...
+end
+
+#会报错
+def search(key_words: 'all', params = {})
+  ...
+end
+```
 
 
 
