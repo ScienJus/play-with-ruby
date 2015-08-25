@@ -62,7 +62,7 @@ Hi ScienJus! You've successfully authenticated, but GitHub does not provide shel
 
 ###创建项目
 
-进入需要创建项目的文件夹，使用`git init`创建项目，使用`git add .`添加文件，`git -m commit  -m 'comment'`提交文件。
+进入需要创建项目的文件夹，使用`git init`创建项目，使用`git add`添加文件，`git commit`提交文件。
 
 ```
 mkdir play-with-ruby
@@ -75,7 +75,7 @@ vim README.md
 
 git add README.md
 
-git commit  -m 'first commit'
+git commit -m 'first commit'
 ```
 
 同步到github
