@@ -20,13 +20,17 @@
  - Amazon EC2 / Ubuntu 14
 
 
-##目录
+##笔记
 
- - [服务器的准备工作][1]
- - [搭建Ruby环境][2]
- - [Ruby的基本语法][3]
- - [Ruby中的可选参数和命名参数][4]
- - [文件操作][5]
+ - [服务器的准备工作][article1]
+ - [搭建Ruby环境][article2]
+ - [Ruby的基本语法][article3]
+ - [Ruby中的可选参数和命名参数][article4]
+ - [文件操作][article5]
+
+##程序
+ - [简单封装的Pixiv的Api][code1]
+
 
 ##参考资料
 
@@ -39,11 +43,13 @@
  - [ruby-doc.org][ref5]
 
 
-[1]: /articles/preparatory.md
-[2]: /articles/install.md
-[3]: /articles/grammar.md
-[4]: /articles/method_parameters.md
-[5]: /articles/file.md
+[article1]: /articles/preparatory.md
+[article2]: /articles/install.md
+[article3]: /articles/grammar.md
+[article4]: /articles/method_parameters.md
+[article5]: /articles/file.md
+
+[code1]: /codes/pixiv.rb
 
 [ref1]: http://lrthw.github.io/
 [ref2]: http://saito.im/slide/ruby-new.html
