@@ -49,7 +49,7 @@
 [article3]: /articles/grammar.md
 [article4]: /articles/method_parameters.md
 [article5]: /articles/file.md
-[article6]: /articles/http.
+[article6]: /articles/http.md
 
 [code1]: /codes/pixiv.rb
 
