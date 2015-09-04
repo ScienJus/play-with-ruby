@@ -14,7 +14,7 @@
 
 ##开发环境
 
-因为Ruby在Windows下的支持并不好，所以我的开发环境为：
+由于Ruby在Windows下的支持并不好，我的开发环境为：
 
  - MacBook Pro 2015 / Mac OS X 10.10
  - Amazon EC2 / Ubuntu 14
@@ -24,12 +24,13 @@
 
  - [服务器的准备工作][article1]
  - [搭建Ruby环境][article2]
- - [Ruby的基本语法][article3]
- - [Ruby中的可选参数和命名参数][article4]
+ - [基本语法][article3]
+ - [可选参数和命名参数][article4]
  - [文件操作][article5]
+ - [发送Http请求][article6]
 
 ##程序
- - [简单封装的Pixiv的Api][code1]
+ - [简单封装的Pixiv Api][code1]
 
 
 ##参考资料
@@ -48,6 +49,7 @@
 [article3]: /articles/grammar.md
 [article4]: /articles/method_parameters.md
 [article5]: /articles/file.md
+[article6]: /articles/http.
 
 [code1]: /codes/pixiv.rb
 

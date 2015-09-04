@@ -1,6 +1,9 @@
 require 'net/http'
+require 'uri'
 require 'json'
 require "fileutils"
+
+#Thanks: https://github.com/upbit/pixivpy/
 
 class Pixiv
   
