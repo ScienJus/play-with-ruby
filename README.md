@@ -24,6 +24,7 @@
 
  - [服务器的准备工作][article1]
  - [搭建Ruby环境][article2]
+ - [开发工具][article7]
  - [基本语法][article3]
  - [可选参数和命名参数][article4]
  - [文件操作][article5]
@@ -50,6 +51,7 @@
 [article4]: /articles/method_parameters.md
 [article5]: /articles/file.md
 [article6]: /articles/http.md
+[article7]: /articles/tools.md
 
 [code1]: /codes/pixiv.rb
 
