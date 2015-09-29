@@ -29,6 +29,7 @@
  - [可选参数和命名参数][article4]
  - [文件操作][article5]
  - [发送Http请求][article6]
+ - [搭建Rails环境][article8]
 
 ##程序
  - [简单封装的Pixiv Api][code1]
@@ -52,6 +53,8 @@
 [article5]: /articles/file.md
 [article6]: /articles/http.md
 [article7]: /articles/tools.md
+[article8]: /articles/install_rails.md
+
 
 [code1]: /codes/pixiv.rb
 
