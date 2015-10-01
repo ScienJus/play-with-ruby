@@ -30,6 +30,7 @@
  - [文件操作][article5]
  - [发送Http请求][article6]
  - [搭建Rails环境][article8]
+ - [使用Devise添加登录、注册模块][article9]
 
 ##程序
  - [简单封装的Pixiv Api][code1]
@@ -54,6 +55,7 @@
 [article6]: /articles/http.md
 [article7]: /articles/tools.md
 [article8]: /articles/install_rails.md
+[article9]: /articles/devise.md
 
 
 [code1]: /codes/pixiv.rb
