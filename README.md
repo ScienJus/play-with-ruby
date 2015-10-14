@@ -31,6 +31,7 @@
  - [发送Http请求][article6]
  - [搭建Rails环境][article8]
  - [Model的CRUD操作][article10]
+ - [数据库迁移][article11]
  - [使用Devise添加登录、注册模块][article9]
 
 ##程序
@@ -60,6 +61,7 @@
 [article8]: /articles/install_rails.md
 [article9]: /articles/devise.md
 [article10]: /articles/model_crud.md
+[article11]: /articles/migrate.md
 
 
 [code1]: /codes/pixiv.rb
