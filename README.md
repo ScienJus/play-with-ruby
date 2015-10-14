@@ -30,6 +30,7 @@
  - [文件操作][article5]
  - [发送Http请求][article6]
  - [搭建Rails环境][article8]
+ - [Model的CRUD操作][article10]
  - [使用Devise添加登录、注册模块][article9]
 
 ##程序
@@ -45,6 +46,8 @@
  - [Ruby 风格指导][ref3]
  - [git简明指南][ref4]
  - [ruby-doc.org][ref5]
+ - [Ruby on Rails 指南][ref6]
+ - [Ruby on Rails 實戰聖經][ref7]
 
 
 [article1]: /articles/preparatory.md
@@ -56,6 +59,7 @@
 [article7]: /articles/tools.md
 [article8]: /articles/install_rails.md
 [article9]: /articles/devise.md
+[article10]: /articles/model_crud.md
 
 
 [code1]: /codes/pixiv.rb
@@ -65,3 +69,5 @@
 [ref3]: https://ruby-china.org/wiki/coding-style
 [ref4]: http://rogerdudler.github.io/git-guide/index.zh.html
 [ref5]: http://ruby-doc.org
+[ref6]: http://guides.ruby-china.org/index.html
+[ref7]: https://ihower.tw/rails4/index.html
