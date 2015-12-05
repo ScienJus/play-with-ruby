@@ -35,7 +35,8 @@
  - [使用Devise添加登录、注册模块][article9]
 
 ##程序
- - [简单封装的Pixiv Api][code1]
+ - [Pixiv 爬虫][code1]
+ - [SMZDM 邮件推送][code2]
 
 
 ##参考资料
@@ -65,6 +66,7 @@
 
 
 [code1]: /codes/pixiv.rb
+[code2]: https://github.com/ScienJus/smzdm-push
 
 [ref1]: http://lrthw.github.io/
 [ref2]: http://saito.im/slide/ruby-new.html
